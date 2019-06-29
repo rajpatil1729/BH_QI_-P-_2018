@@ -1,0 +1,808 @@
+
+\documentclass{beamer}
+\usepackage{relsize,exscale}
+\usepackage{mdframed}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{graphicx}
+% There are many different themes available for Beamer. A comprehensive
+% list with examples is given here:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+% You can uncomment the themes below if you would like to use a different
+% one:
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+\usetheme{default}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+\setbeamertemplate{navigation symbols}{}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\newenvironment{rcases}
+{\left.\begin{aligned}}
+	{\end{aligned}\right\rbrace}
+
+\title{Aspects of Black Holes}
+
+% A subtitle is optional and this may be deleted
+%\subtitle{Optional Subtitle}
+
+\author{Raj Patil}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[IISER Pune] % (optional, but mostly needed)
+{
+ \small Advisor : Dr. Suneeta Vardarajan\rule{0pt}{3ex}
+}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date{$16^{th}$ October, 2018 \\ ~ \\ ~ \\\scriptsize Midsem Presentation\\ for \\ Semester Project PHY401 (Fall-2018) }
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+\subject{Theoretical Computer Science}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+%\AtBeginSubsection[]
+%{
+%  \begin{frame}<beamer>{Outline}
+%    \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+%}
+
+% Let's get started
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+%\section{Motivation}
+\section{Black Holes}
+
+\begin{frame}{Black Holes}{Motivation}
+	\centering
+	What is a Black Hole ?\\
+	~\\
+	~\\
+	\pause
+	Why are Black Holes important?\\
+	
+\end{frame}
+
+
+%\subsection{Schwarzschild Metric}% Birkhoff's theorem
+\subsection{Schwarzschild Black holes}
+\begin{frame}{Schwarzschild Black holes}{Schwarzschild Metric}
+	$$S = \int	\sqrt{-g}~R~d^4x~~~~ \implies ~~\text{Field Equation} :~~~ R_{\mu \nu} = 0 $$\\
+	%Static\\How is this implied by the condn below?
+	~\\
+	\begin{columns}
+		\begin{column}{0.17\textwidth}
+			~\\
+			Spherical symmetry 
+		\end{column}
+		\begin{column}{0.8\textwidth}  %%<--- here
+			$$ \implies ~~ ds^2 = - \Big( 1 - \frac{R_s}{r} \Big) dt^2 + \Big( 1 - \frac{R_s}{r} \Big)^{-1} dr^2 + r^2 d\Omega ^2 $$
+		\end{column}
+	\end{columns}
+	%where $R_s = 2Gm$ \\%is actually free parameter in the theory\\
+	%Newtons laws at weak field limit $\implies ~ R_s = 2GM$\\
+	%singularities and Event Horizon?
+	%This solution describes any spherical symetric object: \\
+	%~~~~~~~~~~~~Star, Planet, \textbf{Black Holes}, etc.
+\end{frame}
+
+%\subsection{Geodesics}
+\begin{frame}{Schwarzschild Black holes}{Event Horizon}%Null Geodesics of Schwarzschild Metric or 
+	\scriptsize
+	\begin{columns}
+		\begin{column}{0.35\textwidth}
+			%Co-ordinates
+			\begin{mdframed}
+				Radial Null geodesics\\
+				\begin{align}
+					&\implies ~ ds^2 = 0\nonumber\\
+					&\implies \frac{dt}{dr} = \pm \Big( 1 - \frac{R_s}{r} \Big)^{-1}\nonumber\\
+					&\implies\nonumber\\
+					&~~~~~~ t = r + R_s \ln | r-R_s|\nonumber\\
+					&~~~~~~~~~~~~~~~~ (outgoing)\nonumber\\
+					&~~~~~~ t = - r - R_s \ln | r-R_s|\nonumber\\
+					&~~~~~~~~~~~~~~~~ (ingoing)\nonumber
+				\end{align}
+			\end{mdframed}
+		\end{column}
+		\begin{column}{0.5\textwidth}  %%<--- here
+			\centering
+			\includegraphics[width=1\textwidth]{./Img/Schwr_M2.JPG}\\
+			%\centering
+			%\includegraphics[width=0.8\textwidth]{./Img/Schwr2.png}
+		\end{column}
+	\end{columns}
+	
+	%fig
+	%singularities
+	%horizons
+\end{frame}
+
+\begin{frame}{Schwarzschild Black holes}{Singularities}
+	$ \bullet ~~ $Curvature Singularities :\\
+	~~~~~~~Singularity because, any of the scalar quantities made up of Riemann tensor blow up.
+	$$ R^{\mu\nu\rho\sigma}~R_{\mu\nu\rho\sigma} = \frac{48G^2M^2}{r^6} $$\\
+	~\\
+	\pause
+	$ \bullet ~~ $Coordinate Singularity :\\
+	~~~~~~~Singularity due to bad choice of coordinates.\\
+	~\\ \centering
+	$r=R_s$
+	\par 
+\end{frame}
+
+%\subsubsection{Edington-Frinkelstein Co-ordinates}
+\begin{frame}{Schwarzschild Black holes}{Eddington-Finkelstein Coordinates}%\centering
+	%only tell about one of these and say how to do the other!
+	\scriptsize
+	\begin{columns}
+		\begin{column}{0.35\textwidth}
+			\begin{mdframed}
+				%Co-ordiantes\\
+				\begin{align}
+					&\text{Tortoise coordinate :} \nonumber\\
+					&\bar{r} = r + R_s\ln|\frac{r}{R_s}-1| \nonumber\\
+					%&u = t - \bar{r}\nonumber\\ 
+					&v = t + \bar{r}\nonumber\\
+					&\bar{t} = v - r\nonumber\\
+					&\implies\nonumber\\
+					&~~~~~~ \bar{t} = r + 2R_s \ln | r-R_s|\nonumber\\
+					&~~~~~~~~~~~~~~~~ (outgoing)\nonumber\\
+					&~~~~~~ t = - r \nonumber\\
+					&~~~~~~~~~~~~~~~~ (ingoing)\nonumber
+				\end{align}
+			\end{mdframed}
+		\end{column}
+		\begin{column}{0.65\textwidth}  %%<--- here
+			Ingoing Eddington-Finkelstein Coordinates\\
+			~\\
+			\includegraphics[width=1\textwidth]{./Img/IngoingEF_M.JPG}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%\subsubsection{Kruskal Co-ordiantes}
+\begin{frame}{Schwarzschild Black holes}{Kruskal Coordinates}
+	\scriptsize
+	\begin{columns}
+		\begin{column}{0.3\textwidth}
+			%Co-ordinates
+		
+			\begin{mdframed}
+			%$$ \bar{r} = r + R_s\ln\big(\frac{r}{R_s}-1\big) $$
+			%$$ v = t + \bar{r} $$
+			%$$ u = t - \bar{r} $$
+				\begin{align}
+				U &= -e^{-(t - \bar{r})/2R_s}\nonumber\\
+				V &= e^{(t + \bar{r})/2R_s} \nonumber\\
+				T &= \frac{1}{2}(V+U) \nonumber\\
+				 &= e^{r/2R_s} \sqrt{r-R_s}\nonumber\\ &~~~~~~~~~~\sinh(t/2R_s)\nonumber\\  
+				R &= \frac{1}{2}(V-U) \nonumber\\
+				 &= e^{r/2R_s} \sqrt{r-R_s} \nonumber \\
+				&~~~~~~~~~~\cosh(t/2R_s) \nonumber
+				\end{align}
+			\end{mdframed}
+		\end{column}
+		\begin{column}{0.55\textwidth}  %%<--- here
+			\includegraphics[width=1\textwidth]{./Img/Kruskal_M.JPG}
+		\end{column}
+	\end{columns}
+	~\\
+	\small
+	\begin{mdframed}
+	$$ ds^2 = \frac{32 G^3M^3}{r}e^{r/R_s} \big(-dT^2 +dR^2\big) + r^2 d\Omega^2 $$
+	\end{mdframed}	
+\end{frame}
+
+\subsection{Penrose Diagram}
+\begin{frame}{Penrose Diagram}{Motivation}
+	 %To study furter properties of BH we need to know this concept
+	
+	\begin{mdframed}
+		\centering 
+		Given a manifold M and metric g, we want to draw a two-dimensional diagram capturing the causal relations between different points in spacetime. 
+	\end{mdframed}
+	~\\
+	\pause
+	\flushleft
+	Idea :\\
+	~\\
+	\scriptsize
+	$ \bullet ~~~ $Coordinate transform (M,g) to bring it in finite co-ordinate distance \\~~~~~(metric may diverge at infinity)\\
+	\vspace{0.1cm}
+	$ \bullet ~~~ $Make a conformal transformation on the metric g to g' which makes\\~~~~~it regular on the edges.\\
+	\vspace{0.1cm}
+	$ \bullet ~~~ $Add points at infinity to M to make it M'\\
+	\vspace{0.1cm}
+	$ \bullet ~~~ $(M',g') is the conformal compactification(Penrose Diagram) of (M,g)
+	
+\end{frame}
+%\begin{frame}{Penrose Diagram}{Minkowski Metric in 1+1 dim}
+%	\begin{columns}
+%		\begin{column}{0.5\textwidth}
+%			\scriptsize
+%			$ \bullet ~~~ $ $ds^2 = -dt^2+dx^2$\\
+%			\vspace{0.1cm}
+%			$ \bullet ~~~ $ $ u = t-x $ and $ v = t+x $\\
+%			\vspace{0.1cm}
+%			$ \bullet ~~~ $ $ \bar{u} = \tan^{-1}(u) $ and $ \bar{v} = \tan^{-1}(v) $\\
+%			\vspace{0.1cm}
+%			$ \bullet ~~~ $ $ ds^2 = \frac{-1}{\big( \cos\bar{u} \cos\bar{v} \big)^2} ~d\bar{u}~d\bar{v} $\\
+%			\vspace{0.1cm}
+%			$ \bullet ~~~ $ $ d\bar{s}^2 = \big( \cos\bar{u} \cos\bar{v} \big)^2 ds^2 $\\
+%			\includegraphics[width=0.7\textwidth]{./Img/Min_11_PD1.png} \\
+%			$ \bullet ~~~ $Now we add points $\bar{u},\bar{v} = \pm \frac{\pi}{2}$
+%		\end{column}
+%		\begin{column}{0.6\textwidth}  %%<--- here
+%			\includegraphics[width=1\textwidth]{./Img/Min_11_PD2.png}	
+%		\end{column}
+%	\end{columns}
+%\end{frame}
+
+\begin{frame}{Penrose Diagram}{Minkowski Metric in 3+1 dim}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			\scriptsize
+			$ \bullet ~~~ $ $ds^2 = -dt^2+dr^2 + r^2 d\Omega^2$\\
+			\vspace{0.1cm}
+			$ \bullet ~~~ $ $ u = t-r $ and $ v = t+r $\\
+			\vspace{0.1cm}
+			$ \bullet ~~~ $ $ \bar{u} = \tan^{-1}(u) $ and $ \bar{v} = \tan^{-1}(v) $\\
+			\vspace{0.1cm}
+			$ \bullet ~~~ $ $ ds^2 = \frac{-1}{\big(2 \cos\bar{u} \cos\bar{v} \big)^2} \big[ -4~d\bar{u}~d\bar{v} + \sin^2(\bar{v}-\bar{u}) d\Omega^2 \big] $\\
+			\vspace{0.1cm}
+			$ \bullet ~~~ $ $ d\bar{s}^2 = \big( \cos\bar{u} \cos\bar{v} \big)^2 ds^2 $\\
+			\vspace{0.1cm}
+			$ \bullet ~~~ $ $ r \ge 0 ~~ \implies \bar{u}\le\bar{v} $\\
+			\vspace{0.1cm}
+			$ \bullet ~~~ $Now we add points $\bar{u},\bar{v} = \pm \frac{\pi}{2}$
+		\end{column}
+		\begin{column}{0.4\textwidth}  %%<--- here
+			\includegraphics[width=1\textwidth]{./Img/Schawrzschild_PD.png}	
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+\begin{frame}{Penrose Diagram}{Kruskal Metric in 3+1 dim}
+	\begin{columns}
+		\begin{column}{0.3\textwidth}
+			\includegraphics[width=1\textwidth]{./Img/Kruskal_M.JPG}
+			\vspace{3cm}
+		\end{column}
+		\begin{column}{0.7\textwidth}  %%<--- here
+			\vspace{2cm}
+			\includegraphics[width=1\textwidth]{./Img/Kruskal_PD.png}	
+		\end{column}
+	\end{columns}
+\end{frame}
+%\subsection{Schwarzschild Black holes}
+\subsection{Reissner Nordstr\"{o}m Black Holes}
+\begin{frame}{Reissner Nordstr\"{o}m Black Holes}{}
+	$$ S = \int \sqrt{-g}~R~d^4x + 16\pi G \int \sqrt{-g} ~F_{\mu \nu}F^{\mu \nu}~d^4x $$
+	\begin{columns}
+		\begin{column}{0.35\textwidth}
+			\centering
+			Field Equation :  
+		\end{column}
+		\begin{column}{0.65\textwidth}  %%<--- here
+			$$ R_{\mu\nu} - \frac{1}{2}~R~g_{\mu\nu} = 8\pi G~T_{\mu\nu} $$
+			$$ g^{\mu\nu} \nabla_\mu F_{\nu\sigma} = 0 ~~~~~\text{and}~~~~~ \nabla_{[\mu}F_{\nu\rho]}=0$$	
+		\end{column}
+	\end{columns}
+	~\\
+	~\\%Static\\
+	\begin{columns}
+		\begin{column}{0.2\textwidth}
+			~\\ \centering
+			Spherical Symmetry  
+		\end{column}
+		\begin{column}{0.8\textwidth}  %%<--- here
+			$$ \implies ~~ ds^2 = - \Delta dt^2 + \Delta^{-1} dr^2 + r^2 d\Omega ^2 $$
+		\end{column}
+	\end{columns}
+	~\\
+	~\\
+	\scriptsize
+	~~~~~where,\\
+	\centering
+	~~~~$\Delta = \Big( 1 - \frac{R_s}{r} +\frac{GQ^2}{r^2} \Big) $
+	~~~~$R_s = 2GM$
+	~~~~Q is the charge of the source\\
+	\vspace{0.0cm}\flushleft%check this !! include defination
+	~~~~~~~~~~~~$F_{\mu\nu} = \nabla_\mu A_\nu - \nabla_\nu A_\mu $
+\end{frame}
+\begin{frame}{Reissner Nordstr\"{o}m Black Holes}{Geodesics of Reissner Nordstr\"{o}m Metric}
+	\begin{columns}
+		\begin{column}{0.45\textwidth}
+			$~~\Delta = 0 \implies$ \\
+			\scriptsize\vspace{0.2cm}
+			$~~~~ r_{\pm} = GM \pm \sqrt{G^2M^2-G(Q^2+P^2)}$\\
+			\vspace{0.3cm}
+			\includegraphics[width=1\textwidth]{./Img/RN_dvsr.png}
+		\end{column}
+		\begin{column}{0.55\textwidth}  %%<--- here
+			\centering
+			$ GM^2 < p^2+q^2 $\\
+			\vspace{0.3cm}
+			\includegraphics[width=1\textwidth]{./Img/RN_PD_1.png}
+		\end{column}
+	\end{columns}
+%singularities
+%horizons
+\end{frame}
+\begin{frame}{Reissner Nordstr\"{o}m Black Holes}{Geodesics of Reissner Nordstr\"{o}m Metric}
+	\begin{columns}
+		\begin{column}{0.45\textwidth}
+			$~~\Delta = 0 \implies$ \\
+			\scriptsize\vspace{0.2cm}
+			$~~~~ r_{\pm} = GM \pm \sqrt{G^2M^2-G(Q^2+P^2)}$\\
+			\vspace{0.3cm}
+			\includegraphics[width=1\textwidth]{./Img/RN_dvsr.png}
+		\end{column}
+		\begin{column}{0.55\textwidth}  %%<--- here
+			\centering
+			$ GM^2 = p^2+q^2 $\\
+			\vspace{0.3cm}
+			\includegraphics[width=0.6\textwidth]{./Img/RN_PD_2.png}
+		\end{column}
+	\end{columns}
+	%singularities
+	%horizons
+\end{frame}
+\begin{frame}{Reissner Nordstr\"{o}m Black Holes}{Geodesics of Reissner Nordstr\"{o}m Metric}
+	\begin{columns}
+		\begin{column}{0.45\textwidth}
+			$~~\Delta = 0 \implies$ \\
+			\scriptsize\vspace{0.2cm}
+			$~~~~ r_{\pm} = GM \pm \sqrt{G^2M^2-G(Q^2+P^2)}$\\
+			\vspace{0.3cm}
+			\includegraphics[width=1\textwidth]{./Img/RN_dvsr.png}
+		\end{column}
+		\begin{column}{0.55\textwidth}  %%<--- here
+			\centering
+			$ GM^2 > p^2+q^2 $\\
+			\vspace{0.3cm}
+			\includegraphics[width=0.9\textwidth]{./Img/RN_PD_3.png}
+		\end{column}
+	\end{columns}
+	%singularities
+	%horizons
+\end{frame}
+
+\subsection{Kerr Black Holes}
+\begin{frame}{Kerr Black Holes}{}
+	$$S = \int	\sqrt{-g}~R~d^4x~~~~ \implies ~~\text{Field Equation} :~~~ R_{\mu \nu} = 0 $$\\
+
+	\begin{columns}
+		\begin{column}{0.3\textwidth}
+			Stationary\\
+			~~~~~~+$ ~~~~~~\implies $\\
+			~~~~Axial \\~Symmetry 
+		\end{column}
+		\begin{column}{0.7\textwidth}  %%<--- here
+			\begin{align}
+				ds^2 =~~& - \Big(1-\frac{R_s r}{\rho^2}\Big) dt^2 + \Big(\frac{\rho^2}{\Delta}\Big) dr^2 \nonumber\\
+				&- \frac{R_s a r \sin^2\theta}{\rho^2} \big(dt d\phi + d\phi dt\big) + \rho^2 d\theta^2 \nonumber\\
+				&+\frac{\sin^2\theta}{\rho^2}\Big(\big(r^2+a^2\big) - a^2 \Delta \sin^2\theta \Big)d\phi^2\nonumber 
+			\end{align} 
+		\end{column}
+	\end{columns}
+	~\\
+	~\\ \scriptsize
+	~~~~~~~~~~where,\\
+	%\centering
+	~~~~~~~~~~~~~~~$\Delta = r^2-2GMr+a^2 $
+	~~~~$\rho^2 = r^2 + a^2 \cos^2\theta $
+	~~~~$R_s = 2GM$\\
+	\vspace{0.2cm}~~~~~~~~~~~~~~ $a = \frac{J}{M}$ 
+\end{frame}
+\begin{frame}{Kerr Black Holes}{Null Geodesics of Kerr Metric}
+	\begin{columns}
+		\begin{column}{0.45\textwidth}
+			$~~\Delta = 0 \implies$ \\
+			\scriptsize\vspace{0.2cm}
+			$~~~~ r_{\pm} = GM \pm \sqrt{G^2M^2-a^2}$\\
+			\vspace{1cm}
+			\includegraphics[width=1\textwidth]{./Img/Kerr1.png}
+		\end{column}
+		\begin{column}{0.55\textwidth}  %%<--- here
+			\includegraphics[width=1\textwidth]{./Img/Kerr_PD.png}
+		\end{column}
+	\end{columns}
+	%singularities ring
+	%horizons
+\end{frame}
+
+
+\section{QFT on curved Spacetime}
+%\subsection{Introduction - QFT on flat Spacetime}
+%\subsection{QFT on curved Spacetime}
+\begin{frame}{QFT on curved Spacetime}{Motivation}
+	\centering
+	First step towards Quantum Gravity
+\end{frame}
+
+\subsection{Introduction}
+\begin{frame}{QFT on curved Spacetime}{Introduction}
+	$$ S = \int \sqrt{-g} \big( -\frac{1}{2}~\nabla_\mu \Phi ~\nabla^\mu \Phi - \frac{1}{2} m^2 \Phi^2 - \xi R \Phi^2 \big)d^4x$$ 
+	~\\
+	\vspace{0.6cm}
+	\centering
+	Field Equation :  ~~~~~$ \Box \Phi - m^2\Phi - \xi~ R~ \Phi = 0 $	\\
+	\vspace{1cm}
+	Underlying metric $g_{\mu\nu}$ is fixed.
+	
+	
+	
+\end{frame}
+\subsection{Bogoliubov transformation}
+\begin{frame}{QFT on curved Spacetime}{Bogoliubov transformation}
+	\centering
+	\begin{mdframed}
+		\centering
+		$ \Phi(t,x) = \int_{-\infty}^{\infty} \frac{d^3k}{(2\pi)^3}\Big[a_k v_k(t)+ a_k^{\dagger} v^{\star}_k(t)\Big] $\\
+		\vspace{0.2cm}
+		$ [\Phi(t,x),\pi(t,y)] = i \delta^3(x-y) $\\
+		\vspace{0.2cm}
+		$ [a_k,a_q^{\dagger}] = i \delta^3(k-q) $\\
+		\vspace{0.3cm}
+		$ \implies v_k(t) \dot v^{\star}_k(t) - v^{\star}_k(t) \dot v_k(t) = 2i $
+	\end{mdframed}
+	\pause
+	\begin{mdframed}
+		\centering
+		$v_k(t)$ is a allowed mode\\
+		\vspace{0.2cm}
+		$ u_k(t) = \int_{-\infty}^{\infty} d^3q\Big[\alpha_{kq} v_k(t) + \beta_{kq}  v^{\star}_k(t)\Big] $\\
+		\vspace{0.2cm}
+		$\int_{-\infty}^{\infty} d^3q \big(\alpha_{kq} \alpha^{\star}_{kp} - \beta^{\star}_{kq} \beta_{kp} \big) = \delta^3(p-q) $\\
+		\vspace{0.3cm}
+		$\implies u_k(t)$ is also a allowed mode
+	\end{mdframed}
+
+	
+\end{frame}
+\begin{frame}{QFT on curved Spacetime}{Bogoliubov transformation}
+	$~~~~ \bullet ~~~ $Field Expansion :\\
+	\centering\vspace{0.2cm}
+	$ \Phi(t,x) = \int_{-\infty}^{\infty} \frac{d^3k}{(2\pi)^3}\Big[a_k v_k(t)+ a_k^{\dagger} v^{\star}_k(t)\Big] $\\
+	~\\
+	$ \Phi(t,x) = \int_{-\infty}^{\infty} \frac{d^3k}{(2\pi)^3}\Big[b_k u_k(t)+ b_k^{\dagger} u ^{\star}_k(t)\Big] $\\
+	\flushleft
+	\pause
+	$~~~~ \bullet ~~~ $Transformation :\\
+	\centering\vspace{0.2cm}
+	$ b_k(t) = \int_{-\infty}^{\infty} d^3q\Big[\alpha^{\star}_{kq} a_k - \beta^{\star}_{kq}  a^{\dagger}_k\Big] $\\
+	\flushleft
+	$~~~~ \bullet ~~~ $Vacuum :\\
+	\centering\vspace{0.2cm}
+	$a_k \ket{0_v}= 0 $ and $b_k \ket{0_u}= 0 $ $\forall k \in (-\infty, + \infty)$\\
+	
+	\flushleft
+	$~~~~ \bullet ~~~ $Expectation value of Number Operator :\\
+	\centering\vspace{0.2cm}
+	$ \bra{0_v} \hat{N}_{(u)k} \ket{0_v} = \bra{0_v} b_k^{\dagger} b_k \ket{0_v} = \int_{-\infty}^{\infty} d^3q \beta_{kq}\beta_{kq}^{\star} $ \\
+	%~\\
+	%$\boxed{\text{Example : Unruh Effect}}$
+\end{frame}
+\begin{frame}{QFT on curved Spacetime}{Bogoliubov transformation}
+	$~~~~ \bullet ~~~ $Field Equation :\\
+	\centering\vspace{0.2cm}
+	$ \Box \Phi - m^2\Phi - \xi~ R~ \Phi = 0 $\\
+	\vspace{0.2cm}
+	\flushleft
+	$~~~~ \bullet ~~~ $If moving along a Time-like Killing Vector ($K^\mu$), one can choose coordiantes such that,\\
+	\centering\vspace{0.2cm}
+	$ \partial_0 g_{\mu\nu} = 0 ~~~~$   and   $~~~~ g_{0i} = 0 $\\
+	\vspace{0.4cm}
+	\scriptsize
+	$ \implies ~~ \partial_0^2~f = -\big(g^{00}\big)^{-1} \Big[  g^{ij}\partial_i\partial_j + g^{00}g^{ij}(\partial_ig_{00})\partial_j - g^{ij}\gamma^k_{ij}\partial_k - (m^2+\xi R) \Big]f  $\\
+	~\\
+	~\\
+	\normalsize
+	\begin{columns}
+		\begin{column}{0.3\textwidth} 
+	\centering$\implies~~~~$  
+\end{column}
+\begin{column}{0.7\textwidth}  %%<--- here
+	$~~~~f_\omega(t,x) = e^{-i\omega t} \bar{f}_\omega(x)$ ~~~~+ve freq\\
+	~\\
+	$~~~~f^{\star}_\omega(t,x) = e^{i\omega t} \bar{f}^{\star}_\omega(x)$  ~~~~-ve freq\\
+	\end{column}
+\end{columns}
+\end{frame}
+\section{Unruh Effect}
+\subsection{Rindler Spacetime}
+\begin{frame}{Unruh Effect}{Constantly accelerated observer}
+	Minkowski metric (2 dim)  : $ ds^2 = -dt^2 +dx^2 $\\
+	\vspace{0.5cm}Claim : the trajectory of a constanly accelerated observer with acceleration 'a' is Hyperbolic in Minkowski co-ordinates. \\	
+	\vspace{0.3cm}
+	\pause
+	Proof:\\
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
+		~\\
+		\vspace{0.2cm}
+		$~~~~ \bullet ~~ $Transformation :\\
+		~\\
+		\centering
+		$ t(\eta)=\frac{1}{a} \sinh(a\eta) $\\% in region 1
+		\vspace{0.2cm}
+		$ x(\eta)=\frac{1}{a} \cosh(a\eta) $\\% in region 1
+		
+	\end{column}
+	\begin{column}{0.5\textwidth}  %%<--- here
+		~\\
+		\vspace{0.2cm}
+		$~~~~ \bullet ~~ $Proper Acceleration :\\
+		~\\
+		\centering
+		$a^{\mu} = \frac{d^2x^{\mu}}{d^2\eta} $\\%this actually should be proper accelaration or explain it properly
+		\scriptsize
+		~\\
+		$a^t = a \sinh(a\eta) $ and $a^x = a \cosh(a\eta) $
+	\end{column}
+	\end{columns}
+	\vspace{0.5cm}
+	\centering
+	$ |a| = \sqrt{a^\mu a_\mu} = \sqrt{-a^2\sinh^2(a\eta) + a^2 \cosh^2(a\eta)} = a  $\\
+	\vspace{0.2cm}
+	$\boxed{\text{Trajectory :}~~~~ x^2 - t^2 = \frac{1}{a^2} }$
+\end{frame}
+\begin{frame}{Unruh Effect}{Rindler Spacetime}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			$\bullet~~$ Minkowski metric :\\
+			\vspace{0.2cm}
+			\centering$ ds^2 = -dt^2 +dx^2 $\\
+			
+		\end{column}
+		\begin{column}{0.5\textwidth}  %%<--- here
+			$\bullet~~$Rindler metric :\\ 
+			\vspace{0.2cm}
+			\centering$ ds^2 = e^{2a\xi} (-d\eta^2 +d\xi^2) $\\
+		
+		\end{column}
+	\end{columns}
+	\begin{columns}
+		\begin{column}{0.45\textwidth}
+			
+			\scriptsize
+			\flushleft Transformations : 
+			\begin{equation*}
+			\begin{rcases}
+			t=&~\frac{1}{a}e^{a\xi} \sinh(a\eta)~~ \\
+			x=&~\frac{1}{a}e^{a\xi} \cosh(a\eta)~~
+			\end{rcases}
+			\text{(I)}
+			\end{equation*}	
+			\begin{equation*}
+			\begin{rcases}
+			t=&~-\frac{1}{a}e^{a\xi} \sinh(a\eta)~~ \\
+			x=&~-\frac{1}{a}e^{a\xi} \cosh(a\eta)~~
+			\end{rcases}
+			\text{(IV)}
+			\end{equation*}\\
+			\vspace{0.5cm}
+			\normalsize
+			
+		\end{column}
+		\begin{column}{0.55\textwidth}  %%<--- here
+			~\\
+			\vspace{0.5cm}
+			\centering
+			\includegraphics[width=0.9\textwidth]{./Img/Rindler_coord.png}
+		\end{column}
+	\end{columns}
+	
+	
+\end{frame}
+\subsection{Modes}
+\begin{frame}{Unruh Effect}{Modes}
+	
+	%Scaler field : 
+	%$ \Phi(t,x) = \int_{0}^{\infty} \frac{d^3k}{(2\pi)^3}\Big[a_k f_k + a_k^{\dagger} f^{\star}_k + a_{-k} f_{-k} + a_{-k}^{\dagger} f^{\star}_{-k}\Big] $\\
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			%Also specify correspondingn operators!\\
+			$ \bullet $~~Field Equation : \\
+			\vspace{0.3cm}
+			 ~~~~~$ \Box \Phi = 0 $	\\
+			\vspace{0.3cm}
+			$ \bullet $~~Minkowski modes :\\ 
+			\vspace{0.3cm}
+			$f_k = \frac{1}{\sqrt{(2\pi)^32\omega}}e^{-i\omega t + ikx }$\\
+			\vspace{0.5cm}
+			$\bullet$~~Rindler Modes :\\
+			\[   
+			g_k^{(1)} = 
+			\begin{cases}
+			\frac{1}{\sqrt{4\pi \omega}} e^{-i\omega \eta + i k \xi}  & (I)\\
+			0  & (IV)\\
+			\end{cases}
+			\]
+			\[   
+			g_k^{(2)} = 
+			\begin{cases}
+			0  & (I)\\
+			\frac{1}{\sqrt{4\pi \omega}} e^{i\omega \eta + i k \xi}  & (IV)\\
+			\end{cases}
+			\]
+		\end{column}
+		\begin{column}{0.5\textwidth}  %%<--- here
+			\includegraphics[width=1\textwidth]{./Img/Rindler_coord_M.JPG}
+		\end{column}
+		
+	\end{columns}
+	
+	
+	%Scaler field : 
+	%$ \Phi(t,x) = \int_{0}^{\infty} \frac{d^3k}{(2\pi)^3}\Big[b^{(1)}_k g^{(1)}_k + b_k^{(1)\dagger} g^{(1)\star}_k + b^{(1)}_{-k} g^{(1)}_{-k} + b_{-k}^{(1)\dagger} g^{(1)\star}_{-k} + b^{(2)}_k g^{(2)}_k + b_k^{(2)\dagger} g^{(2)\star}_k + b^{(2)}_{-k} g^{(2)}_{-k} + b_{-k}^{(2)\dagger} g^{(2)\star}_{-k}\Big] $\\
+			
+		
+\end{frame}
+\begin{frame}{Unruh Effect}{Modes}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			$\bullet$~~ Unruh Modes :
+			\scriptsize	
+			\begin{align}
+			h_k^{(1)} &= \frac{1}{\sqrt{2\sinh\big(\frac{\pi \omega}{a}\big)}} \Big( e^{\pi \omega / 2a} g_k^{(1)} + e^{-\pi \omega / 2a} g_{-k}^{(2)\star} \Big) \nonumber\\
+			&= \frac{2e^{\pi \omega / 2a}}{\sqrt{2\sinh\big(\frac{\pi \omega}{a}\big)}} \Big(~a^{i\omega/a}~~(-t+x)^{i\omega/a}~\Big) \nonumber\\
+			h_k^{(2)} &= \frac{1}{\sqrt{2\sinh\big(\frac{\pi \omega}{a}\big)}} \Big( e^{\pi \omega / 2a} g_k^{(2)} + e^{-\pi \omega / 2a} g_{-k}^{(1)\star} \Big) \nonumber\\
+			&= \frac{2e^{\pi \omega / 2a}}{\sqrt{2\sinh\big(\frac{\pi \omega}{a}\big)}} \Big(~a^{i\omega/a}~~(-t-x)^{i\omega/a}~\Big) \nonumber
+			\end{align}
+			
+		\end{column}
+		\begin{column}{0.4\textwidth}  %%<--- here
+			\scriptsize
+			$\bullet$ ~~Analytic Properties of modes \\
+			\includegraphics[width=1\textwidth]{./Img/Unruh_modes_M.JPG}
+		\end{column}
+	\end{columns}
+	\vspace{1cm}
+	\centering
+	\pause
+	$ \boxed{a_k \ket{0_M} = 0 \implies c_k^{(1)} \ket{0_M} = c_k^{(2)} \ket{0_M} = 0} $
+\end{frame}
+\subsection{Unruh Temperature}
+\begin{frame}{Unruh Effect}{Unruh Temperature}
+	\footnotesize
+	$ \bullet ~~~~ $Bogolyubov transformation in corresponding operators:\\
+	\centering$$ b_k^{(1)} = \frac{1}{\sqrt{2\sinh(\frac{\pi \omega}{a})}} \Big( e^{\pi \omega / 2a} c_k^{(1)} + e^{-\pi \omega / 2a} c_{-k}^{(2)\dagger} \Big)   $$
+	$$ b_k^{(2)} = \frac{1}{\sqrt{2\sinh(\frac{\pi \omega}{a})}} \Big( e^{\pi \omega / 2a} c_k^{(2)} + e^{-\pi \omega / 2a} c_{-k}^{(1)\dagger} \Big)   $$\\
+	\vspace{0.5cm}
+	
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			$ \bullet ~~~ $Expectation value of Number operator : 
+			\begin{align}
+				\bra{0_M} \hat{N}_{R}^{(1)} \ket{0_M} &= \bra{0_M} b_k^{(1)\dagger} b_k^{(1)} \ket{0_M}\nonumber\\ &= \frac{1}{e^{2\pi\omega/a}-1} \delta(0) \nonumber
+			\end{align}
+		
+			\vspace{0.2cm}
+			\centering$ \boxed{\text{Unruh Temperature:} ~~~~~	T = \frac{a}{2\pi} }$ 
+			
+		\end{column}
+		\begin{column}{0.4\textwidth}  %%<--- here
+			\includegraphics[width=0.8\textwidth]{./Img/Rindler_coord_M.JPG}
+		\end{column}
+	\end{columns}
+	
+\end{frame}
+
+\section{Hawking Radiation}
+\begin{frame}{Hawking Radiation}{}
+	\centering
+	Unruh Effect $\implies$ Concept of Vaccum is Observer dependent
+	\vspace{1cm}
+	\pause
+	\begin{mdframed}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\centering
+			Kruskal Coordinates\\
+			\vspace{0.5cm}
+			Schwarzschild Coordinates
+		\end{column}
+		\begin{column}{0.5\textwidth}  %%<--- here
+			\centering
+			Minkowski Coordinates\\
+			\vspace{0.5cm}
+			Rindler Coordinates
+		\end{column}
+	\end{columns}
+	\end{mdframed}
+	\pause
+	\vspace{1cm}
+	Hawking Radiation\\
+	\pause
+	\vspace{1cm}
+	Black Hole Information Paradox
+\end{frame}
+
+\section{Summary}
+\begin{frame}{Summary}
+	\begin{itemize}
+		\item {Black Holes}
+		\begin{itemize}
+			\item {Schwarzschild Black Holes}
+			\item {Reissner Nordstr\"{o}m Black Holes}
+			\item {Kerr Black Holes}
+		\end{itemize}
+		\item {QFT on curved Spacetime}
+		\begin{itemize}
+			\item {Bogoliubov transformation\\~~~~ Vaccum is Observer dependent}
+			
+		\end{itemize}
+		\item {Unruh Effect}
+		\item {Hawking Radiation}
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	
+
+``So Einstein was wrong when he said, `God does not play dice.' Consideration of black holes suggests, not only that God does play dice, but that he sometimes confuses us by throwing them where they can't be seen"\footnote{\tiny The Nature of Space and Time (1996) by Stephen Hawking and Roger Penrose, p. 121}\par\raggedleft--- \textup{Stephen Hawking}\\
+\centering
+~\\
+~\\
+~\\
+~\\
+\Large Thank You !
+
+\end{frame}
+
+
+
+\end{document}
+
+
